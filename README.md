@@ -1,6 +1,6 @@
 
 # VividZap SCP500s :
-![SCP500.jpeg](Pictures/SCP500.jpeg)
+https://github.com/VividZap/VividZapSCP500s/tree/main/SCP500s
 ### Its Plugin SCP:SL with Exiled 9.8.1
 ### We use CustomItems for SCP500 we use change effect and abilitys for this item 
 # SCP500 items : 
