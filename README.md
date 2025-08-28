@@ -1,6 +1,7 @@
 
 # VividZap SCP500s :
-<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/2da041a2-843c-4fd1-8b42-8cf6b1549160" />
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/3f45f6cb-c27a-4c5e-8ec8-bce44e16d98b" />
+
 ### Its Plugin SCP:SL with Exiled 9.8.1
 ### We use CustomItems for SCP500 we use change effect and abilitys for this item 
 # SCP500 items : 
