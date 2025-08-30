@@ -34,7 +34,7 @@ namespace SCP500s.SuperItems
         {
             if (Check(eventArgs.Item))
             {
-                eventArgs.Player.ShowHint("<color=#ec3a8b> [Now any one we cant see you - you have just 7s to back] </color>",4f);
+                eventArgs.Player.ShowHint(Main.Instance.Config.SCP500shadow,4f);
                 eventArgs.Player.EnableEffect(EffectType.Ghostly,7f);
             }
         }

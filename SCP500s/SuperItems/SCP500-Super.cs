@@ -33,10 +33,9 @@ public class Scp500Super : CustomItem
     {
         if (Check(eventArgs.Item))
         {
-            eventArgs.Player.ShowHint(
-                "<color= #ca9a19> [If you eat this its well give you a good effects Or Super effects we cant any one kill you] </color>");
+            eventArgs.Player.ShowHint(Main.Instance.Config.SCP500super);
             eventArgs.Player.EnableEffect(EffectType.Invisible, 7f);
-            eventArgs.Player.EnableEffect(EffectType.MovementBoost, 50f);
+            eventArgs.Player.EnableEffect(EffectType.MovementBoost, 50);
             eventArgs.Player.EnableEffect(EffectType.SilentWalk, 7f);
             eventArgs.Player.EnableEffect(EffectType.SeveredHands,1f);
         }
@@ -45,7 +44,7 @@ public class Scp500Super : CustomItem
         {
             
         }
-}
+    }
 }
 
 

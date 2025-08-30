@@ -32,8 +32,8 @@ public class Scp500Sonic : CustomItem
     {
         if (Check(eventArgs.Item))
         {
-            eventArgs.Player.EnableEffect(EffectType.MovementBoost, 100f);
-            eventArgs.Player.ShowHint("<color=#198C19> [For eat this you have a very lot speed so this effect we finish after 10 s !!Ruuuuuun!!] </color>");
+            eventArgs.Player.EnableEffect(EffectType.MovementBoost, 200);
+            eventArgs.Player.ShowHint(Main.Instance.Config.SCP500sonic);
         }
     }
 }

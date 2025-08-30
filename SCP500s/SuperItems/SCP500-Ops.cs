@@ -38,8 +38,7 @@ public class Scp500Ops : CustomItem
         if (Check(eventArgs.Item))
         {
             eventArgs.Player.EnableEffect(EffectType.Scp1344, 15f);
-            eventArgs.Player.ShowHint("<color=#8E7CC3> [Now you can see all players and enemys in this game] </color>",
-                5f);
+            eventArgs.Player.ShowHint(Main.Instance.Config.SCP500ops);
 
         }
     }

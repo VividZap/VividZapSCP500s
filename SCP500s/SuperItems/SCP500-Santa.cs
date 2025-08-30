@@ -3,7 +3,9 @@ using System.Linq;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomItems.API.Features;
 using Exiled.Events.EventArgs.Player;
+using GameCore;
 using MEC;
+using UnityEngine;
 
 namespace SCP500s.SuperItems;
 
@@ -36,11 +38,22 @@ public class Scp500Santa : CustomItem
             var item = eventArgs.Item;
             var items = eventArgs.Player.Items.ToList();
             Timing.CallDelayed(0.1f, () => eventArgs.Player.CurrentItem = items.RandomItem());
-            eventArgs.Player.CurrentItem = item;
-            eventArgs.Player.ShowHint("<color= #87457A> [Eat this for take random item] </color>");
-            Main.Instance.Config.Items = new List<ItemType>();
+            eventArgs.Player.ShowHint(Main.Instance.Config.SCP500Santa);
+            eventArgs.Player.AddItem(Main.Instance.Config.Items);
+            Main.Instance.Config.Items = new List<ItemType>()
+            {
+                ItemType.ArmorHeavy,
+                ItemType.GrenadeHE,
+                ItemType.GunAK,
+                ItemType.GunE11SR,
+                ItemType.Adrenaline,
+                ItemType.KeycardO5,
+                ItemType.Radio
+
+            };
         }
     }
+    
 }
 
 
