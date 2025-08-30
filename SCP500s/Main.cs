@@ -1,5 +1,6 @@
 
 using System;
+using System.Linq;
 using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.CustomItems;
@@ -7,6 +8,7 @@ using Exiled.CustomItems.API;
 using Exiled.CustomItems.API.Features;
 using Exiled.Events.Features;
 using SCP500s.SuperItems;
+using UnityEngine;
 
 
 namespace SCP500s
@@ -29,6 +31,10 @@ namespace SCP500s
             new Scp500Santa().Register();
             new Scp500Shadow().Register();
             new Scp500Sonic().Register();
+            new SCP500_Aphera().Register();
+            new SCP500_Xerneas().Register();
+            new Scp500Yamato().Register();
+            
             Instance = this;
             Log.Info("Scp500s plugin loaded");
             base.OnEnabled();
@@ -40,5 +46,8 @@ namespace SCP500s
             Log.Info("Scp500s plugin unloaded");
             base.OnDisabled();
         }
+      
     }
 }
+
+    

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
+using Exiled.API.Enums;
 using Exiled.API.Interfaces;
 using SCP500s.SuperItems;
 
@@ -23,6 +24,25 @@ namespace SCP500s
         public List<Scp500Sonic>  scp500Sonics { get; set; } = new();
         public List<Scp500Super> scp500Supers { get; set; } = new();
         public List<Scp500Ops>  scp500ops { get; set; } = new();
+        [Description("All Hints for SCP500s")]
+        public string SCP500Rakun { get; set; } = "<color=#87457A> [Wow good kid] </color>";
+
+        public string SCP500ops { get; set; } = "<color=#8E7CC3> [Now you can see all players and enemys in this game] </color>";
+
+        public string SCP500Santa { get; set; } = "<color= #87457A> [Eat this for take random item] </color>";
+
+        public string SCP500super { get; set; } = "<color= #ca9a19> [If you eat this its well give you a good effects Or Super effects we cant any one kill you] </color>";
+
+        public string SCP500shadow { get; set; } = "<color=#ec3a8b> [Now any one we cant see you - you have just 7s to back] </color>";
+
+        public string SCP500sonic { get; set; } = "<color=#198C19> [For eat this you have a very lot speed so this effect we finish after 10 s !!Ruuuuuun!!] </color>";
+
+        public string SCP500aphera { get; set; } = "<color= #87457A> [WOW your head in the ground] </color>";
+
+        public string SCP500xerneas { get; set; } = "<color=#ec3a8b> [You teleported now] </color>";
+
+        public string SCP500yamato { get; set; } = "<color=#87457A> [More Health more kills XD] </color>";
+         
 
         [Description("Items List we can take for use SCP500-santa")]
         public List<ItemType> Items { get; set; } = new List<ItemType>
@@ -36,5 +56,18 @@ namespace SCP500s
             ItemType.Radio
             
         };
-   }
+
+        public List<RoomType> Room { get; set; } = new List<RoomType>()
+        {
+            RoomType.EzCafeteria,
+            RoomType.EzCheckpointHallwayA,
+            RoomType.EzCheckpointHallwayB,
+            RoomType.EzChef,
+            RoomType.EzGateB,
+            RoomType.EzGateA,
+            RoomType.Pocket,
+            RoomType.LczArmory,
+            RoomType.Hcz079
+        };
+    }
 }
