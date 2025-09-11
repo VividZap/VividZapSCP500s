@@ -25,12 +25,12 @@ public class SCP500_Xerneas : CustomItem
         {
             new()
             {
-                Chance = 50,
+                Chance = 100,
                 Location = SpawnLocationType.InsideGateA,
             },
             new()
             {
-                Chance = 40,
+                Chance = 100,
                 Location = SpawnLocationType.InsideLczCafe,
             },
         },

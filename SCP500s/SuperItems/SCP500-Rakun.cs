@@ -24,12 +24,12 @@ public class Scp500Rakun :  CustomItem
         {
             new()
             {
-                Chance = 50,
+                Chance = 100,
                 Location = SpawnLocationType.InsideLczWc,
             },
             new()
             {
-                Chance = 40,
+                Chance = 80,
                 Location = SpawnLocationType.Inside914,
             },
         },

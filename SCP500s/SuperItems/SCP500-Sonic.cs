@@ -26,12 +26,12 @@ public class Scp500Sonic : CustomItem
         {
             new()
             {
-                Chance = 50,
+                Chance = 100,
                 Location = SpawnLocationType.InsideHidUpper,
             },
             new()
             {
-                Chance = 40,
+                Chance = 85,
                 Location = SpawnLocationType.Inside173Bottom,
             },
         },

@@ -1,24 +1,26 @@
 using System.Collections.Generic;
 using Exiled.API.Enums;
+using Exiled.API.Extensions;
 using Exiled.API.Features;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomItems.API.Features;
 using Exiled.Events.EventArgs.Map;
 using Exiled.Events.EventArgs.Player;
 using Mirror;
+using PlayerRoles;
 using UnityEngine;
-using Server = Exiled.Events.Handlers.Server;
 
 namespace SCP500s.SuperItems;
-// This special to YAMATO DEVLOPER EXILED ineed tell you like my brother and realy good man
-// thx for Exiled devlopers to Creat this amazing EXILED 
-public class Scp500Yamato : CustomItem
+
+public class SCP500_47 : CustomItem
 {
-    public override uint Id { get; set; } = 8;
-    public override string Name { get; set; } = "SCP500 Yamato";
-    public override string Description { get; set; } = "If you eat this we have a more health";
+    public override uint Id { get; set; } = 12;
+    public override string Name { get; set; } = "SCP500-47";
+    public override string Description { get; set; } = "So this plugin you can spy any one";
     public override float Weight { get; set; } = 1.5f;
     public override ItemType Type { get; set; } = ItemType.SCP500;
+
+  
     public override SpawnProperties? SpawnProperties { get; set; } = new()
     {
         Limit = 1,
@@ -27,39 +29,51 @@ public class Scp500Yamato : CustomItem
             new()
             {
                 Chance = 100,
-                Location = SpawnLocationType.InsideGateA,
+                Location = SpawnLocationType.InsideHidUpper,
+                
             },
             new()
             {
                 Chance = 100,
-                Location = SpawnLocationType.InsideHczArmory,
+                Location = SpawnLocationType.Inside330Chamber,
             },
         },
-    };              
+    };
     protected override void SubscribeEvents()
     {
-        Exiled.Events.Handlers.Player.UsedItem += UsedItem;
+        Exiled.Events.Handlers.Player.UsedItem += OnUsed; 
         Exiled.Events.Handlers.Map.PickupAdded += AddGlow;
-        Exiled.Events.Handlers.Map.PickupDestroyed += RemoveGlow;
-        Log.Debug("Yamato Subscribed");
+        Log.Debug("SCP500_47 Subscribed");
         base.SubscribeEvents();
     }
 
     protected override void UnsubscribeEvents()
     {
-        Log.Debug("yamato Unsubscribed");
+        Exiled.Events.Handlers.Player.UsedItem -= OnUsed;
+        Log.Debug("SCP500_47 Unsubscribed");
         base.UnsubscribeEvents();
     }
-    private void UsedItem(UsedItemEventArgs eventArgs)
+
+    private void OnUsed(UsedItemEventArgs eventArgs)
     {
         if (Check(eventArgs.Item))
         {
-            eventArgs.Player.ShowHint(Main.Instance.Config.SCP500yamato);
-            eventArgs.Player.Health = 150;
+            eventArgs.Player.ShowHint(Main.Instance.Config.SCP500_47,3);
+            List<RoleTypeId> roleType = new()
+            {
+                PlayerRoles.RoleTypeId.Scp049,
+                PlayerRoles.RoleTypeId.Scp079,
+                PlayerRoles.RoleTypeId.Scp096,
+                PlayerRoles.RoleTypeId.Scp173,
+                PlayerRoles.RoleTypeId.Scp3114,
+                PlayerRoles.RoleTypeId.Scp106
+            };
+            int GiveRole = Random.Range(0, roleType.Count);
+            RoleTypeId RoleTypeId = roleType[GiveRole];
+            eventArgs.Player.ChangeAppearance(RoleTypeId);
         }
     }
-    
-    public Color glowColor = new Color32(0x00, 0xFF, 0x00, 0xFF);
+    public Color glowColor = new Color32(0xFF, 0x69, 0xB4, 0xFF);
 
     private Dictionary<Exiled.API.Features.Pickups.Pickup, Exiled.API.Features.Toys.Light> ActiveLights = [];
     
@@ -103,8 +117,4 @@ public class Scp500Yamato : CustomItem
             ActiveLights[ev.Pickup] = light;
         }
     }
-
-    
 }
-
-

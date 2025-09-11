@@ -27,12 +27,12 @@ public class Scp500Santa : CustomItem
         {
             new()
             {
-                Chance = 50,
+                Chance = 100,
                 Location = SpawnLocationType.InsideIntercom,
             },
             new()
             {
-                Chance = 40,
+                Chance = 100,
                 Location = SpawnLocationType.InsideLczCafe,
             },
         },

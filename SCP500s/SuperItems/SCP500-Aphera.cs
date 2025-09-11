@@ -24,12 +24,12 @@ public class SCP500_Aphera : CustomItem
         {
             new()
             {
-                Chance = 50,
+                Chance = 100,
                 Location = SpawnLocationType.Inside049Armory,
             },
             new()
             {
-                Chance = 40,
+                Chance = 100,
                 Location = SpawnLocationType.InsideSurfaceNuke,
             },
         },
@@ -101,6 +101,7 @@ public class SCP500_Aphera : CustomItem
             light.Intensity = 0.7f;
             light.Range = 0.5f;
             light.ShadowType = LightShadows.None;
+           
 
             light.Base.gameObject.transform.SetParent(ev.Pickup.Base.gameObject.transform);
             ActiveLights[ev.Pickup] = light;

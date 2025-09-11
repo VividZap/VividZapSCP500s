@@ -25,12 +25,12 @@ public class Scp500Super : CustomItem
         {
             new()
             {
-                Chance = 50,
+                Chance = 100,
                 Location = SpawnLocationType.InsideHidUpper,
             },
             new()
             {
-                Chance = 40,
+                Chance = 100,
                 Location = SpawnLocationType.InsideGateB,
             },
         },
