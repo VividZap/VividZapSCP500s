@@ -18,13 +18,15 @@ namespace SCP500s
         public override string Name { get; } = "SCP500s";
         public override string Author { get;} = "VividZap";
         public override string Prefix { get; } = "SCP500s";
-        public override Version Version { get; } = new Version(2, 5, 1);
+        public override Version Version { get; } = new Version(2, 5, 5);
         public override Version RequiredExiledVersion { get; } = new Version(9, 8, 1);
         public static Main Instance { get; set; } 
         
         public override void OnEnabled()
         {
             CustomItem.RegisterItems();
+            new SCP500_47().Register();
+            new SCP500_Lucky().Register();
             new Scp500Super().Register();
             new Scp500Ops().Register();
             new Scp500Rakun().Register();

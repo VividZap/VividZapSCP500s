@@ -18,7 +18,12 @@ namespace SCP500s
         public Scp500Shadow Scp500Shadow { get; set; } = new ();
         public Scp500Sonic Scp500Sonic { get; set; } = new ();
         public Scp500Rakun Scp500Rakun { get; set; } = new();
+        public Scp500Yamato scp500Yamato { get; set; } = new();
         public Scp500Super Scp500Super { get; set; } = new ();
+        public SCP500_Lucky scp500Lucky { get; set; } = new();
+        public SCP500_47 scp500_47 { get; set; } = new();
+        public List<SCP500_Lucky> SCP500_Lucky { get; set; } = new();
+        public List<SCP500_47> Scp50047 { get; set; } = new();
         public List<Scp500Santa> scp500Santas { get; set; } = new();
         public List<Scp500Shadow> scp500Shadows { get; set; } = new();
         public List<Scp500Sonic>  scp500Sonics { get; set; } = new();
@@ -29,7 +34,7 @@ namespace SCP500s
 
         public string SCP500ops { get; set; } = "<color=#8E7CC3> [Now you can see all players and enemys in this game] </color>";
 
-        public string SCP500Santa { get; set; } = "<color= #87457A> [Eat this for take random item] </color>";
+        public string SCP500Santa { get; set; } = "<color=#87457A> [Eat this for take random item] </color>";
 
         public string SCP500super { get; set; } = "<color= #ca9a19> [If you eat this its well give you a good effects Or Super effects we cant any one kill you] </color>";
 
@@ -42,6 +47,8 @@ namespace SCP500s
         public string SCP500xerneas { get; set; } = "<color=#ec3a8b> [You teleported now] </color>";
 
         public string SCP500yamato { get; set; } = "<color=#87457A> [More Health more kills XD] </color>";
+
+        public string SCP500_47 { get; set; } = "<color=#198C19> [Now you Spy with another role XD] </color>";
          
 
         [Description("Items List we can take for use SCP500-santa")]
