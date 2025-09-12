@@ -16,7 +16,7 @@ public class Scp500Sonic : CustomItem
 {
     public override uint Id { get; set; } = 2;
     public override string Name { get; set; } = "SCP500 Sonic";
-    public override string Description { get; set; } = "SCP500 Sonic : if you eat this You will become very fast like sonic";
+    public override string Description { get; set; } = "Gives extreme speed (You become sonic lol) for 7 seconds.";
     public override float Weight { get; set; } = 1.5f;
     public override ItemType Type { get; set; } = ItemType.SCP500;
     public override SpawnProperties? SpawnProperties { get; set; } = new()

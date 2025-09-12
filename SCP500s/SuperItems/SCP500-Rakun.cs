@@ -15,7 +15,7 @@ public class Scp500Rakun :  CustomItem
 {
     public override uint Id { get; set; } = 6;
     public override string Name { get; set; } =  "SCP500 Rakun";
-    public override string Description { get; set; } = "SCP500 Rakun : Its a very special - if you eat this you have a small";
+    public override string Description { get; set; } = "Shrinks your body after eating it.";
     public override float Weight { get; set; } = 1.5f;
     public override SpawnProperties? SpawnProperties { get; set; } = new()
     {

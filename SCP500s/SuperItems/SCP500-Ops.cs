@@ -17,7 +17,7 @@ public class Scp500Ops : CustomItem
     public override string Name { get; set; } = "SCP500 Traker";
 
     public override string Description { get; set; } =
-        "SCP500_Ops : for eat this you can see All players like use SCP-1344";
+        "Lets you see all players through walls, like SCP-1344.";
 
     public override ItemType Type { get; set; } = ItemType.SCP500;
 

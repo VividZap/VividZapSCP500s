@@ -16,7 +16,7 @@ public class SCP500_Xerneas : CustomItem
     private float _f;
     public override uint Id { get; set; } = 7;
     public override string Name { get; set; } = "SCP500-Xerneas";
-    public override string Description { get; set; } = "SCP500-Xerneas : if you eat this pill you teleport to a rendom place in Facility";
+    public override string Description { get; set; } = "if you eat this pill you can teleport to a rendom place in the Facility";
     public override float Weight { get; set; } = 1.5f;
     public override SpawnProperties? SpawnProperties { get; set; } = new()
     {

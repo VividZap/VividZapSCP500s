@@ -16,7 +16,7 @@ namespace SCP500s.SuperItems
         public override string Name { get; set; } = "SCP500 Shadow";
 
         public override string Description { get; set; } =
-            "SCP500 Shadow : if you eat this any one we cant see you like real shadow";
+            "Lets you pass through doors unseen, like a true shadow.";
 
         public override ItemType Type { get; set; } = ItemType.SCP500;
         public override float Weight { get; set; } = 0.5f;

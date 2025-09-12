@@ -17,7 +17,7 @@ public class Scp500Santa : CustomItem
 {
     public override uint Id { get; set; } = 5;
     public override string Name { get; set; } =  "SCP500-Santa";
-    public override string Description { get; set; } = "SCP500-Santa : If you eat this we give you a rendom weapon or item we use this";
+    public override string Description { get; set; } = "A pill of luck, gives a random item, good or bad.";
     public override float Weight { get; set; } = 1.5f;
     public override ItemType Type { get; set; } = ItemType.SCP500;
     public override SpawnProperties? SpawnProperties { get; set; } = new()

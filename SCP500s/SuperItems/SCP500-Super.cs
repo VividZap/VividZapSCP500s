@@ -15,7 +15,7 @@ public class Scp500Super : CustomItem
 {
     public override uint Id { get; set; } = 4;
     public override string Name { get; set; } = "Super SCP500";
-    public override string Description { get; set; } = "Super SCP500 : its pill we have a crazy multi effects to help you in the game";
+    public override string Description { get; set; } = "Eat this to move faster and walk silently, but you lose the use of your hands.";
     public override float Weight { get; set; } = 1.5f;
     public override ItemType Type { get; set; } = ItemType.SCP500;
     public override SpawnProperties? SpawnProperties { get; set; } = new()
