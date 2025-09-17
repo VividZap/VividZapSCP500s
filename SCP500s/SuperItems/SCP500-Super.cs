@@ -61,11 +61,6 @@ public class Scp500Super : CustomItem
             eventArgs.Player.EnableEffect(EffectType.SilentWalk, 7f);
             eventArgs.Player.EnableEffect(EffectType.SeveredHands,1f);
         }
-
-        SpawnProperties.StaticSpawnPoints = new List<StaticSpawnPoint>();
-        {
-            
-        }
     }
     public Color glowColor = new Color32(0x00, 0xFF, 0xFF, 0xFF);
 
@@ -114,6 +109,7 @@ public class Scp500Super : CustomItem
 
     
 }
+
 
 
 
