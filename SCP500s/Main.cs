@@ -16,7 +16,7 @@ namespace SCP500s
     public class Main : Plugin<Config>
     {
         public override string Name { get; } = "SCP500s";
-        public override string Author { get;} = "VividZap";
+        public override string Author { get;} = "VividZap - Lumi";
         public override string Prefix { get; } = "SCP500s";
         public override Version Version { get; } = new Version(2, 5, 5);
         public override Version RequiredExiledVersion { get; } = new Version(9, 8, 1);
@@ -26,6 +26,7 @@ namespace SCP500s
         {
             CustomItem.RegisterItems();
             new SCP500_47().Register();
+            new SCP500_Lumien().Register();
             new SCP500_Lucky().Register();
             new Scp500Super().Register();
             new Scp500Ops().Register();

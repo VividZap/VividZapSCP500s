@@ -22,6 +22,10 @@ namespace SCP500s
         public Scp500Super Scp500Super { get; set; } = new ();
         public SCP500_Lucky scp500Lucky { get; set; } = new();
         public SCP500_47 scp500_47 { get; set; } = new();
+        public SCP500_Lumien scp500_Lumien { get; set; } = new();
+        
+        [Description("List Pills")]
+        public List<SCP500_Lumien> Lumien { get; set; } = new();
         public List<SCP500_Lucky> SCP500_Lucky { get; set; } = new();
         public List<SCP500_47> Scp50047 { get; set; } = new();
         public List<Scp500Santa> scp500Santas { get; set; } = new();
@@ -29,8 +33,11 @@ namespace SCP500s
         public List<Scp500Sonic>  scp500Sonics { get; set; } = new();
         public List<Scp500Super> scp500Supers { get; set; } = new();
         public List<Scp500Ops>  scp500ops { get; set; } = new();
+        
         [Description("All Hints for SCP500s")]
         public string SCP500Rakun { get; set; } = "<color=#87457A> [Wow good kid] </color>";
+
+        public string SCP500Lumien { get; set; } = "<color=#198C19> [Now you Betray your team] </color>";
 
         public string SCP500ops { get; set; } = "<color=#8E7CC3> [Now you can see all players and enemys in this game] </color>";
 
