@@ -18,6 +18,7 @@ public class SCP500_Lucky : CustomItem
     public override string Description { get; set; } = "Here you need use all you lucky if you eat this we can give you good effect or bed so good luck";
     public override float Weight { get; set; } = 1.5f;
     public override ItemType Type { get; set; } =  ItemType.SCP500;
+
     public override SpawnProperties? SpawnProperties { get; set; } = new()
     {
         Limit = 1,
@@ -47,6 +48,7 @@ public class SCP500_Lucky : CustomItem
     protected override void UnsubscribeEvents()
     {
         Exiled.Events.Handlers.Player.UsedItem -= OnUsed;
+        Exiled.Events.Handlers.Map.PickupAdded -= AddGlow;
         Log.Debug("lucky Unsubscribed");
         base.UnsubscribeEvents();
     }

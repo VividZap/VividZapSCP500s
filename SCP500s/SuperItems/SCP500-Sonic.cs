@@ -48,7 +48,8 @@ public class Scp500Sonic : CustomItem
     protected override void UnsubscribeEvents()
     {
         Exiled.Events.Handlers.Player.UsedItem -= UsedItem;
-
+        Exiled.Events.Handlers.Map.PickupAdded -= AddGlow;
+        Exiled.Events.Handlers.Map.PickupDestroyed -= RemoveGlow;
         base.UnsubscribeEvents();
     }
 
@@ -56,7 +57,7 @@ public class Scp500Sonic : CustomItem
     {
         if (Check(eventArgs.Item))
         {
-            eventArgs.Player.EnableEffect(EffectType.MovementBoost, 200);
+            eventArgs.Player.EnableEffect(EffectType.MovementBoost, 200 , 5);
             eventArgs.Player.ShowHint(Main.Instance.Config.SCP500sonic);
         }
     }
@@ -99,7 +100,7 @@ public class Scp500Sonic : CustomItem
 
             light.Intensity = 0.7f;
             light.Range = 0.5f;
-            light.ShadowType = LightShadows.None;
+            light.ShadowType = LightShadows.Hard;
 
             light.Base.gameObject.transform.SetParent(ev.Pickup.Base.gameObject.transform);
             ActiveLights[ev.Pickup] = light;

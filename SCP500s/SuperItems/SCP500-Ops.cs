@@ -51,6 +51,8 @@ public class Scp500Ops : CustomItem
     protected override void UnsubscribeEvents()
     {
         Exiled.Events.Handlers.Player.UsedItem -= UsedItem;
+        Exiled.Events.Handlers.Map.PickupAdded -= AddGlow;
+        Exiled.Events.Handlers.Map.PickupDestroyed -= RemoveGlow;
 
         base.UnsubscribeEvents();
     }

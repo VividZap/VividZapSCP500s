@@ -6,6 +6,7 @@ using Exiled.API.Features.Spawn;
 using Exiled.CustomItems.API.Features;
 using Exiled.Events.EventArgs.Map;
 using Exiled.Events.EventArgs.Player;
+using MEC;
 using Mirror;
 using PlayerRoles;
 using UnityEngine;
@@ -16,14 +17,12 @@ public class SCP500_47 : CustomItem
 {
     public override uint Id { get; set; } = 12;
     public override string Name { get; set; } = "SCP500-47";
-    public override string Description { get; set; } = "So this plugin you can spy any one";
+    public override string Description { get; set; } = "So this plugin you can spy any one (For SCPs)";
     public override float Weight { get; set; } = 1.5f;
     public override ItemType Type { get; set; } = ItemType.SCP500;
-
-  
     public override SpawnProperties? SpawnProperties { get; set; } = new()
     {
-        Limit = 1,
+        Limit = 2,
         DynamicSpawnPoints = new List<DynamicSpawnPoint>
         {
             new()
@@ -59,6 +58,7 @@ public class SCP500_47 : CustomItem
         if (Check(eventArgs.Item))
         {
             eventArgs.Player.ShowHint(Main.Instance.Config.SCP500_47,3);
+            RoleTypeId originalRole = eventArgs.Player.Role.Type;
             List<RoleTypeId> roleType = new()
             {
                 PlayerRoles.RoleTypeId.Scp049,
@@ -71,8 +71,15 @@ public class SCP500_47 : CustomItem
             int GiveRole = Random.Range(0, roleType.Count);
             RoleTypeId RoleTypeId = roleType[GiveRole];
             eventArgs.Player.ChangeAppearance(RoleTypeId);
+            Timing.CallDelayed(5f, () =>
+            {
+                if (eventArgs.Player != null && eventArgs.Player.IsConnected)
+                    eventArgs.Player.ChangeAppearance(originalRole);
+            });
         }
+        eventArgs.Item.Destroy();
     }
+    
     public Color glowColor = new Color32(0xFF, 0x69, 0xB4, 0xFF);
 
     private Dictionary<Exiled.API.Features.Pickups.Pickup, Exiled.API.Features.Toys.Light> ActiveLights = [];

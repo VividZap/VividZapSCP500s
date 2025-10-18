@@ -49,7 +49,8 @@ public class Scp500Santa : CustomItem
     protected override void UnsubscribeEvents()
     {
         Exiled.Events.Handlers.Player.UsedItem -= UsedItem;
-
+        Exiled.Events.Handlers.Map.PickupAdded -= AddGlow;
+        Exiled.Events.Handlers.Map.PickupDestroyed -= RemoveGlow;
         base.UnsubscribeEvents();
     }
 
@@ -114,14 +115,12 @@ public class Scp500Santa : CustomItem
 
             light.Intensity = 0.7f;
             light.Range = 0.5f;
-            light.ShadowType = LightShadows.None;
+            light.ShadowType = LightShadows.Hard;
 
             light.Base.gameObject.transform.SetParent(ev.Pickup.Base.gameObject.transform);
             ActiveLights[ev.Pickup] = light;
         }
     }
-
-    
 }
 
 

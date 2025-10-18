@@ -56,11 +56,10 @@ public class SCP500_Aphera : CustomItem
     {
         if (Check(eventArgs.Item))
         {
-            eventArgs.Player.ShowHint(Main.Instance.Config.SCP500ops);
-            var player = eventArgs.Player;
-            player.Rotation = Quaternion.Euler(0, 180, 0) * player.Rotation;
-            eventArgs.Player.CameraTransform.rotation = player.Rotation;
-            eventArgs.Player.ShowHint(Main.Instance.Config.SCP500aphera);
+            {
+                eventArgs.Player.ShowHint("Where is my head");
+                eventArgs.Player.EnableEffect(EffectType.Ensnared, 5);
+            }
         }
     }
     public Color glowColor = new Color32(0x31, 0x33, 0x00, 0x01);

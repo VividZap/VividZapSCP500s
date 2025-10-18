@@ -40,6 +40,7 @@ public class Scp500Rakun :  CustomItem
 
     {
         Exiled.Events.Handlers.Player.UsedItem += UsedItem;
+        Exiled.Events.Handlers.Player.Spawned += OnSpawned;
         Exiled.Events.Handlers.Map.PickupAdded += AddGlow;
         Exiled.Events.Handlers.Map.PickupDestroyed += RemoveGlow;
         Log.Debug("Subscribed");
@@ -48,6 +49,9 @@ public class Scp500Rakun :  CustomItem
 
     protected override void UnsubscribeEvents()
     {
+        Exiled.Events.Handlers.Player.UsedItem -= UsedItem;
+        Exiled.Events.Handlers.Map.PickupAdded -= AddGlow;
+        Exiled.Events.Handlers.Map.PickupDestroyed -= RemoveGlow;
         Log.Debug("Unsubscribed");
         base.UnsubscribeEvents();
     }
@@ -56,9 +60,19 @@ public class Scp500Rakun :  CustomItem
         if (Check(eventArgs.Item))
         {
             eventArgs.Player.ShowHint(Main.Instance.Config.SCP500Rakun);
-            eventArgs.Player.Scale *= 0.5f;
-            eventArgs.Player.CurrentItem = eventArgs.Item;
+            eventArgs.Player.Scale = new Vector3(0.5f, 0.5f, 0.5f);
+            eventArgs.Usable.Destroy();
         }
+
+        if (eventArgs.Player.IsDead)
+        {
+            eventArgs.Player.Health = 0;
+        }
+    }
+
+    private void OnSpawned(SpawnedEventArgs eventArgs)
+    {
+        eventArgs.Player.Scale = new Vector3(1f, 1f, 1f);
     }
     public Color glowColor = new Color32(0x94, 0x00, 0xD3, 0xFF);
 
@@ -104,8 +118,6 @@ public class Scp500Rakun :  CustomItem
             ActiveLights[ev.Pickup] = light;
         }
     }
-
-    
 }
 
 
