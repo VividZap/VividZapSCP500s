@@ -4,6 +4,7 @@ using Exiled.API.Enums;
 using Exiled.API.Interfaces;
 using SCP500s.SuperItems;
 
+
 namespace SCP500s
 {
     public class Config : IConfig
@@ -23,9 +24,11 @@ namespace SCP500s
         public SCP500_Lucky scp500Lucky { get; set; } = new();
         public SCP500_47 scp500_47 { get; set; } = new();
         public SCP500_Lumien scp500_Lumien { get; set; } = new();
+        public SCP500_IG Godkill { get; set; } = new();
         
         [Description("List Pills")]
         public List<SCP500_Lumien> Lumien { get; set; } = new();
+        public List<SCP500_IG> godkills { get; set; } = new();
         public List<SCP500_Lucky> SCP500_Lucky { get; set; } = new();
         public List<SCP500_47> Scp50047 { get; set; } = new();
         public List<Scp500Santa> scp500Santas { get; set; } = new();
