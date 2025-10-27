@@ -19,7 +19,7 @@ namespace SCP500s
         public override string Author { get;} = "VividZap - Lumi";
         public override string Prefix { get; } = "SCP500s";
         public override Version Version { get; } = new Version(4, 0, 0);
-        public override Version RequiredExiledVersion { get; } = new Version(9, 9, 2);
+        public override Version RequiredExiledVersion { get; } = new Version(9, 10, 0);
         public static Main Instance { get; set; } 
         
         public override void OnEnabled()
@@ -55,3 +55,4 @@ namespace SCP500s
 }
 
     
+
