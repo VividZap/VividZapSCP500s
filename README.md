@@ -30,6 +30,6 @@ its like any pills but this you need use your lucky we can give you any item goo
 ### Devloper : VividZap 
 ### GitHub : [Github](https://github.com/VividZap)
 
-## Version 4.1.0 coming son
+## Version 4.1.0 coming soon
 <img width="460" height="460" alt="image" src="https://github.com/user-attachments/assets/8d16d4b4-2a37-4142-b5aa-356cfbc7963e" />
 
